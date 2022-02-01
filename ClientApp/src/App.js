@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
-import Counter from './components/Counter.js';
+import Notes from './components/Notes.js';
 import Tenzies from './components/Tenzies.js';
 import Quiz from './components/Quiz'
 
@@ -18,8 +18,8 @@ export default class App extends Component {
         <Route path='/' exact> 
           <Home />  
         </Route>
-        <Route path='counter'>
-          <Counter />
+        <Route path='/notes'>
+          <Notes />
         </Route>
         <Route path='/fetch-data'>
           <FetchData />
