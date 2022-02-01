@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\mml.it-minds.dk\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\mml.it-minds.dk\\.nuget\\packages"
+    ]
+  }
+}
