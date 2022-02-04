@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using csharpreact.Entities;
 using csharpreact.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
 namespace csharpreact.Controllers
@@ -43,12 +44,12 @@ namespace csharpreact.Controllers
         }
 
         public async Task<System.IO.Stream> Process(int amount, string difficulty) {
-            /*var url = new TriviaQuestionUrlBuilder()
-                .setAmount(25)
-                .setDifficultyEasy()
-                .setTypeMultipleChoice()
-                .Build();*/
-            var url = $"https://opentdb.com/api.php?&amount={amount}&difficulty={difficulty}&type=multiple";
+            var queryParams = new Dictionary<string, string>() {
+                {"amount", amount.ToString()},
+                {"difficulty", difficulty},
+                {"type","multiple"}
+            };
+            var url = QueryHelpers.AddQueryString("https://opentdb.com/api.php", queryParams);
             Console.WriteLine($"Url called: {url}");
             var response = await client.GetAsync(url); 
             Console.WriteLine(response.Content);
